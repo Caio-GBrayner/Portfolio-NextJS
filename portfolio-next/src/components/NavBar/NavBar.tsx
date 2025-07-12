@@ -4,6 +4,7 @@ import React from 'react'
 import LogoNav from './LogoNav'
 import { navLinks } from '@/constant/constant'
 import Link from 'next/link'
+import ThemeToggleButton from '@/context/ThemeContext';
 
 type NavBarProps = {
   activeItem: string;
@@ -38,9 +39,7 @@ const NavBar = ({ activeItem, setActiveItem }: NavBarProps) => {
         })}
       </div>
       <div className='hidden md:flex items-center gap-4'>
-        <button className='relative w-10 h-10 rounded-full bg-white/10 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/20 hover:bg-white/20 dark:hover:bg-white/20 transition-all duration-300 flex items-center justify-center'>
-          teste
-        </button>
+        <ThemeToggleButton/>
         <Link href={"#"} className='px-6 py-3 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-base'>
           Get in touch
         </Link>
