@@ -72,7 +72,7 @@ export default function ThemeToggleButton() {
     type AnimationDirection = 'clockwise' | 'counter-clockwise';
 
     const iconVariants = {
-    hidden: (direction: AnimationDirection) => ({ // Tipamos 'direction' aqui
+    hidden: (direction: AnimationDirection) => ({ 
       rotate: direction === 'clockwise' ? 90 : -90,
       opacity: 0,
     }),
@@ -81,7 +81,7 @@ export default function ThemeToggleButton() {
       opacity: 1,
       transition: { duration: 0.1, ease: 'easeOut' as Easing },
     },
-    exit: (direction: AnimationDirection) => ({ // Tipamos 'direction' aqui
+    exit: (direction: AnimationDirection) => ({
       rotate: direction === 'clockwise' ? -90 : 90,
       opacity: 0,
       transition: { duration: 0.1, ease: 'easeIn' as Easing },
