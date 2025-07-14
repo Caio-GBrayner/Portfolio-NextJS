@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 import TestimonialCard from './TestimonialCard';
 import ProductLogo from './ProductLogo';
 
-// --- Main Testimonials Section Component ---
 const TestimonialsSection = () => {
-  // Array of testimonial data
   const testimonials = [
     {
       testimonial: "Working with Ali was seamless and highly productive. His attention to detail and commitment to our project’s success were exceptional. Ali truly knows how to deliver quality results. Highly recommended!",
@@ -33,7 +31,6 @@ const TestimonialsSection = () => {
       title: "CTO of Apex Technologies",
       initials: "RK",
     },
-    // Duplicate testimonials for continuous scroll effect (make sure you have enough duplicates for smooth loop)
     {
       testimonial: "Working with Ali was seamless and highly productive. His attention to detail and commitment to our project’s success were exceptional. Ali truly knows how to deliver quality results. Highly recommended!",
       author: "James Peterson",
@@ -111,8 +108,7 @@ const TestimonialsSection = () => {
                }}>
             <ul className="flex gap-16 py-6 flex-nowrap w-max animate-scroll group-hover:pause-animation">
               {testimonials.map((testimonial, index) => (
-                // Important: Using index as key is usually fine for static lists, but if testimonials
-                // could be reordered or removed, use a unique ID for better performance/reliability.
+
                 <TestimonialCard
                   key={index}
                   testimonial={testimonial.testimonial}
