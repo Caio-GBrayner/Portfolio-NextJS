@@ -1,14 +1,35 @@
-// Footer.jsx
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const paragraphVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } },
+  };
+
 
 const Footer = () => {
   return (
     <footer className="w-full pt-8 pb-10 bg-background dark:bg-black" id="contact">
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[55vw] text-center text-foreground">
-          Ready To Take <span className="text-primary">Your Digital </span>Presence To The Next Level?
-        </h1>
+        <motion.h1 
+        className="heading lg:max-w-[55vw] text-center text-foreground"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={titleVariants}
+        >
+          Ready To Take 
+          <span className="text-primary"> Your Digital </span><br/>
+          Presence To The Next Level?
+        </motion.h1>
         <p className="text-muted-foreground mt-5 md:mt-10 text-center max-w-xl">
           Reach out to me today and let's discuss how I can help you achieve your GOALS!
         </p>
