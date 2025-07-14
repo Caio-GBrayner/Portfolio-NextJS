@@ -58,7 +58,7 @@ export default function ThemeToggleButton() {
     if (theme === 'dark') {
       htmlElement.classList.add('dark');
       htmlElement.classList.remove('light');
-      htmlElement.style.colorScheme = 'dark'; // <--- ADIÇÃO AQUI
+      htmlElement.style.colorScheme = 'dark';
     } else {
       htmlElement.classList.remove('dark');
       htmlElement.classList.add('light');
