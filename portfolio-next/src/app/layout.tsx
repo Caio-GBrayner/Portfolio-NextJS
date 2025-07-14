@@ -1,11 +1,9 @@
-// layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Import Inter from next/font
+import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBarTest from "@/components/navBar/NavBarTest";
-import Footer from "@/components/Footer"; // Assuming your Footer is in components/Footer.jsx
 
-const inter = Inter({ subsets: ["latin"] }); // Initialize the Inter font
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}> {/* Apply the font class here */}
+    <html lang="en" className={inter.className}>
       <body>
         <NavBarTest />
         <div className="pt-24">
