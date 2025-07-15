@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
                style={{
                  '--animation-direction': 'reverse',
                  '--animation-duration': '100s',
-               }}>
+               } as React.CSSProperties & Record<string, any>}>
             <ul className="flex gap-16 py-6 flex-nowrap w-max animate-scroll group-hover:pause-animation">
               {testimonials.map((testimonial, index) => (
 
