@@ -21,9 +21,7 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
   --color-black: var(--black);
-  --color-white: var(--white)
-  
- 
+  --color-white: var(--white);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
