@@ -35,7 +35,13 @@ const Footer = () => {
         </p>
 
         {/* Contact Form */}
-        <form action="https://formsubmit.co/24e70568dbecfbe6ee452e2bec6bb272" method="POST" className="w-full max-w-xl mt-10 flex flex-col gap-4 px-4">
+        <motion.form action="https://formsubmit.co/24e70568dbecfbe6ee452e2bec6bb272" method="POST" className="w-full max-w-xl mt-10 flex flex-col gap-4 px-4"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+          whileHover={{ scale: 1.01 }}
+        >
           <input
             placeholder="Your Name"
             required
@@ -73,7 +79,7 @@ const Footer = () => {
           <button type="submit" className="bg-primary text-primary-foreground py-3 px-6 rounded-lg hover:bg-primary/90 transition-all duration-300 font-medium">
             Send Message
           </button>
-        </form>
+        </motion.form>
 
         {/* Schedule a Call Link - Still 'a' tag as it's external */}
         <div className="mt-6">
