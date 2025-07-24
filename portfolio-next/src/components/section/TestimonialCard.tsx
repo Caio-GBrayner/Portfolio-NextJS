@@ -13,10 +13,6 @@ const TestimonialCard = ({ testimonial, author, title, initials }: TestimonialCa
     <motion.li
       className="flex-shrink-0 w-[90vw] md:w-[60vw] max-w-full p-5 md:p-16 rounded-2xl relative group overflow-hidden transition-all duration-500 hover:pause-animation shadow-lg hover:shadow-xl"
       style={{ perspective: '1000px' }}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5 }}
     >
       {/* Background Gradients and Borders */}
       <div className="absolute inset-0 bg-gradient-to-br from-card via-card to-card opacity-80 dark:opacity-90 z-0"></div>
