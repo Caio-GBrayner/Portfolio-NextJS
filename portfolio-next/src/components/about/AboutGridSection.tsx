@@ -1,6 +1,6 @@
 'use client'
-import { Card } from '@/components/about/Caard'; // Assuming Card is a named export
-import { CircleIcon, GlobeIcon, CodeIcon, ZapIcon} from '@/components/icons/icons'; // Import your actual icon components
+import { Card } from '@/components/about/Caard';
+import { CircleIcon, GlobeIcon, CodeIcon, ZapIcon} from '@/components/icons/icons';
 import { NextJsIcon, ReactIcon,TypeScriptIcon, NodeJsIcon, PythonIcon, } from '@/components/icons/icons';
 
 
@@ -94,9 +94,9 @@ export default function AboutGridSection() {
                 description="Building trust through transparent communication and collaboration."
                 icon={CircleIcon}
                 href="/experience"
-                glow // This will make the glow active by default
+                glow
                 overlayContent={
-                    <div className="text-white">
+                    <div className="text-foreground">
                     <h4 className="text-xl font-bold mb-2">My Philosophy</h4>
                     <p className="text-sm">We prioritize your vision, ensuring a collaborative journey from concept to launch.</p>
                     </div>
@@ -111,7 +111,7 @@ export default function AboutGridSection() {
                 description="Available across time zones for seamless worldwide collaboration."
                 icon={GlobeIcon}
                 overlayContent={
-                    <div className="text-white">
+                    <div className="text-foreground">
                     <h4 className="text-xl font-bold mb-2">Remote-Ready</h4>
                     <p className="text-sm">Equipped for global projects, adapting to your schedule and location.</p>
                     </div>
@@ -126,9 +126,8 @@ export default function AboutGridSection() {
                 description="Technologies and tools I use to build innovative solutions"
                 icon={CodeIcon}
                 techs={techStackData}
-                glow={true}
                 overlayContent={
-                    <div className="text-white">
+                    <div className="text-foreground">
                     <h4 className="text-xl font-bold mb-2">Innovative Tools</h4>
                     <p className="text-sm">Leveraging cutting-edge technologies to bring your ideas to life.</p>
                     </div>
@@ -144,7 +143,7 @@ export default function AboutGridSection() {
                 icon={ZapIcon}
                 href="/case-studies"
                 overlayContent={
-                    <div className="text-white">
+                    <div className="text-foreground">
                     <h4 className="text-xl font-bold mb-2">Smart Automation</h4>
                     <p className="text-sm">Exploring AI's potential to optimize processes and enhance user experiences.</p>
                     <p className="text-xs mt-2">(Click to see case studies)</p>
@@ -159,8 +158,9 @@ export default function AboutGridSection() {
                 title="Ready to Collaborate"
                 description="Let's create something amazing together"
                 icon={NextJsIcon}
+                glow={true}
                 overlayContent={
-                    <div className="text-white">
+                    <div className="text-foreground">
                     <h4 className="text-xl font-bold mb-2">Let's Connect!</h4>
                     <p className="text-sm">Eager to discuss your next big idea. Reach out and let's build the future.</p>
                     </div>

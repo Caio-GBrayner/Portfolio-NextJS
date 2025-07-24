@@ -1,15 +1,12 @@
 'use client'
-import Link from 'next/link'; // Assuming you are using Next.js Link
+import Link from 'next/link';
 import React, { useState, ReactNode } from 'react';
 
-// Define types for your SVG icons if they are React components
 interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
-  // Add any specific props your SVG components might have
 }
 
-// Define the shape of a technology object if you have more details
 interface Tech {
-  icon: React.ElementType<SvgIconProps>; // Expects a React component for the icon
+  icon: React.ElementType<SvgIconProps>;
   name: string;
   colorClass: string;
 }
@@ -17,18 +14,16 @@ interface Tech {
 interface CardProps {
   title: string;
   description: string;
-  icon: React.ElementType<SvgIconProps>; // Expects a React component for the icon
-  href?: string; // Optional link
-  techs?: Tech[]; // Optional array of technologies for the Modern Tech Stack card
-  glow?: boolean; // Controls if the base glow effect is always active
-  overlayContent?: ReactNode; // New prop for content shown on hover
-  glowingEffectProps?: { // Optional props to customize the glowing effect's starting point
+  icon: React.ElementType<SvgIconProps>;
+  href?: string;
+  techs?: Tech[];
+  glow?: boolean;
+  overlayContent?: ReactNode;
+  glowingEffectProps?: {
     start: string;
-    // You can add more glow-specific properties here if needed
   };
 }
 
-// Helper component for the main card content to avoid repetition
 const CardContent: React.FC<{
   icon: React.ElementType<SvgIconProps>;
   title: string;
@@ -71,20 +66,19 @@ export function Card({
   icon,
   href,
   techs,
-  glow = false, // Base glow state
-  overlayContent, // Content to show on hover
+  glow = false, 
+  overlayContent,
   glowingEffectProps,
 }: CardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Combine `glow` prop with `isHovered` for glow effect control
   const activeGlow = glow || isHovered;
 
   const glowingStyle = {
     '--blur': '0px',
     '--spread': '80',
-    '--start': glowingEffectProps?.start || '0', // Dynamic start for the glow
-    '--active': activeGlow ? '1' : '0', // Control glow opacity based on activeGlow
+    '--start': glowingEffectProps?.start || '0',
+    '--active': activeGlow ? '1' : '0',
     '--glowingeffect-border-width': '3px',
     '--repeating-conic-gradient-times': '5',
     '--gradient': `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
@@ -99,7 +93,7 @@ export function Card({
                     #4c7894 calc(75% / var(--repeating-conic-gradient-times)),
                     #dd7bbb calc(100% / var(--repeating-conic-gradient-times))
                   );`,
-  } as React.CSSProperties; // Assert as React.CSSProperties for custom CSS variables
+  } as React.CSSProperties;
 
   return (
     <div
@@ -110,7 +104,7 @@ export function Card({
       {/* Glow effect */}
       <div
         className={`pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity`}
-        style={glowingStyle} // Apply the dynamic glowingStyle here
+        style={glowingStyle} 
       >
         <div className="glow rounded-[inherit] after:content-[''] after:rounded-[inherit] after:absolute after:inset-[calc(-1*var(--glowingeffect-border-width))] after:[border:var(--glowingeffect-border-width)_solid_transparent] after:[background:var(--gradient)] after:[background-attachment:fixed] after:opacity-[var(--active)] after:transition-opacity after:duration-300 after:[mask-clip:padding-box,border-box] after:[mask-composite:intersect] after:[mask-image:linear-gradient(#0000,#0000),conic-gradient(from_calc((var(--start)-var(--spread))*1deg),#00000000_0deg,#fff,#00000000_calc(var(--spread)*2deg))]" />
       </div>
