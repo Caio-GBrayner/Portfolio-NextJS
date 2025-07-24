@@ -1,11 +1,15 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import TestimonialCard from './TestimonialCard';
 import ProductLogo from './ProductLogo';
 
 const TestimonialsSection = () => {
+
+const scrollControls = useAnimation();
+const [isHovering, setIsHovering] = useState(false);
+
   const testimonials = [
     {
       testimonial: "Working with Ali was seamless and highly productive. His attention to detail and commitment to our project’s success were exceptional. Ali truly knows how to deliver quality results. Highly recommended!",
@@ -57,6 +61,32 @@ const TestimonialsSection = () => {
     },
   ];
 
+useEffect(() => {
+    const startScrolling = async () => {
+        const totalItemsWidth = testimonials.length * ( (window.innerWidth * 0.6) + 64 );
+        const scrollAmount = totalItemsWidth / 2;
+
+        await scrollControls.start({
+            x: -scrollAmount,
+            transition: {
+                duration: testimonials.length * 10,
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "loop",
+            },
+        });
+    };
+
+    if (!isHovering) {
+        scrollControls.stop();
+        startScrolling();
+    } else {
+        scrollControls.stop();
+    }
+
+    return () => scrollControls.stop();
+}, [isHovering, testimonials.length, scrollControls]);
+
   const titleVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -102,11 +132,12 @@ const TestimonialsSection = () => {
         {/* Testimonials Carousel */}
         <div className="mb-20">
           <div className="relative overflow-hidden w-screen left-1/2 transform -translate-x-1/2 group before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-24 before:bg-gradient-to-r before:from-background before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-24 after:bg-gradient-to-l after:from-background after:to-transparent"
-               style={{
-                 '--animation-direction': 'reverse',
-                 '--animation-duration': '100s',
-               } as React.CSSProperties & Record<string, any>}>
-            <ul className="flex gap-16 py-6 flex-nowrap w-max animate-scroll group-hover:pause-animation">
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          > 
+            <motion.ul className="flex gap-16 py-6 flex-nowrap w-max"
+            animate={scrollControls}
+            >
               {testimonials.map((testimonial, index) => (
 
                 <TestimonialCard
@@ -117,7 +148,7 @@ const TestimonialsSection = () => {
                   initials={testimonial.initials}
                 />
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
 
