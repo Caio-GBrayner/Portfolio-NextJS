@@ -22,6 +22,28 @@
   --color-ring: hsl(var(--ring));
   --color-black: var(--black);
   --color-white: var(--white);
+  --animate-wiggle: wiggle 1s ease-in-out infinite;  
+  --animate-scroll: scroll 100s linear infinite;
+  
+  @keyframes wiggle {    
+    0%,    
+    100% {      
+      transform: rotate(-3deg);    
+    }    
+    
+    50% {      
+      transform: rotate(3deg);    
+    }  
+  }
+
+ @keyframes scroll {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+};
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -118,3 +140,12 @@ body {
   line-height: 2.5rem;
   font-weight: 700;
 }
+
+.pattern-image {
+  background-color: #e5e5f700;
+  opacity: 0.1;
+  background: radial-gradient(circle, transparent 20%, #e5e5f700 20%, #e5e5f700 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f700 20%, #e5e5f700 80%, transparent 80%, transparent) 22.5px 22.5px, linear-gradient(#3b76ed 1.8px, transparent 1.8px) 0 -0.9px, linear-gradient(90deg, #3b76ed 1.8px, #e5e5f700 1.8px) -0.9px 0;
+  background-size: 45px 45px, 45px 45px, 22.5px 22.5px, 22.5px 22.5px;
+  }
+
+  
