@@ -1,7 +1,6 @@
 import Footer from "@/components/footer/Footer";
 import ApproachSection from '@/components/section/ApproachSection'
 import TestimonialsSection from '@/components/section/TestimonialsSection'
-import GridExample from "@/components/about/GridExample";
 import AboutGridSection from "@/components/about/AboutGridSection";
 import BackgroundDecor from "@/components/hero/BackgroundDecor";
 import HeroContent from "@/components/hero/HeroContent";
