@@ -24,6 +24,17 @@
   --color-white: var(--white);
   --animate-wiggle: wiggle 1s ease-in-out infinite;  
   --animate-scroll: scroll 100s linear infinite;
+  --animate-blink: blink 1.1s step-end infinite;
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
   
   @keyframes wiggle {    
     0%,    
