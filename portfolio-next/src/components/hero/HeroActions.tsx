@@ -2,7 +2,7 @@ export default function HeroActions() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 w-full max-w-lg mx-auto">
       <a
-        href="/Ali-Mohsin-CV.pdf"
+        href="/Caio-Brayner-CV.pdf"
         download
         className="w-full sm:w-auto group relative overflow-hidden bg-gradient-to-r from-primary to-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg flex items-center gap-2 justify-center transition-all duration-300"
       >
@@ -12,7 +12,7 @@ export default function HeroActions() {
         <span className="relative z-10">Download CV</span>
       </a>
       <a
-        href="https://calendly.com/ali787ch/get-to-know-me"
+        href="https://calendly.com/Caio/get-to-know-me"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full sm:w-auto group relative overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-primary text-foreground hover:text-primary px-6 py-3 rounded-xl font-semibold flex items-center gap-2 justify-center transition-all duration-300 hover:bg-primary/5"

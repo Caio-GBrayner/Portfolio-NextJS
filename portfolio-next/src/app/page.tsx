@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Footer from "@/components/footer/Footer";
 import ApproachSection from '@/components/section/ApproachSection'
 import TestimonialsSection from '@/components/section/TestimonialsSection'
