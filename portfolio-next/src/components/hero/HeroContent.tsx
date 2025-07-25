@@ -1,3 +1,4 @@
+import RewritingText from "@/context/RewritingText";
 import HeroActions from "./HeroActions";
 
 export default function HeroContent() {
@@ -6,8 +7,15 @@ export default function HeroContent() {
       <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 h-auto min-h-[1.2em] flex items-center justify-center text-center w-full">
         <div className="bg-gradient-to-r from-foreground via-primary to-blue-500 bg-clip-text text-transparent leading-tight">
           <span className="inline-flex items-baseline min-h-[1.2em]">
-            <span className="text-left">Hi, I am Caio</span>
-            {/* <span className="inline-block w-0.5 h-[0.8em] bg-primary ml-1"></span> */}
+            <span className="text-left">
+              <RewritingText
+                texts={['Hi, I am Caio', 'Olá, eu sou Caio', 'Hola, soy Caio', '你好，我是Caio', 'Привет, я Кайо']}
+                typingDelay={0.07}
+                erasingDelay={0.03}
+                pauseBetweenSentences={3}
+                loop={true}/>
+            </span>
+            <span className="inline-block w-0.5 h-[0.8em] bg-primary ml-1 animate-blink"></span>
           </span>
         </div>
       </div>
