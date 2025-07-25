@@ -6,26 +6,14 @@ import { usePathname } from 'next/navigation';
 import ThemeToggleButton from '@/context/ThemeContext';
 import HamburgerButton from '@/context/HamburgerButton';
 import LogoNav from './LogoNav';
+import {motion} from 'framer-motion'
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState('light');
   const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => {
-      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
-      if (newTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      return newTheme;
-    });
   };
 
   const navLinks = [
@@ -58,7 +46,15 @@ const Navbar = () => {
                 {/* Conditionally render the dot for the active link */}
                 {pathname === link.href ? (
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-primary rounded-full" style={{ opacity: 1 }}></div>
+                      <motion.div
+                        className="w-3 h-3 bg-primary rounded-full"
+                        layoutId="navbar-indicator"
+                        transition={{
+                          type: 'spring',
+                          stiffness: 300,
+                          damping: 30,
+                        }}
+                      />
                     {link.name}
                   </div>
                 ) : (
