@@ -86,3 +86,38 @@ export const FramerIcon = () => (
     <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"></path>
   </svg>
 );
+
+export const ChipIcon = () => (
+<svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+  <rect x="9" y="9" width="6" height="6"></rect>
+  <line x1="9" y1="1" x2="9" y2="4"></line>
+  <line x1="15" y1="1" x2="15" y2="4"></line>
+  <line x1="9" y1="20" x2="9" y2="23"></line>
+  <line x1="15" y1="20" x2="15" y2="23"></line>
+  <line x1="20" y1="9" x2="23" y2="9"></line>
+  <line x1="20" y1="14" x2="23" y2="14"></line>
+  <line x1="1" y1="9" x2="4" y2="9"></line>
+  <line x1="1" y1="14" x2="4" y2="14"></line>
+</svg>
+);
+
+export const CodeDivIcon = () => (
+  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="16 18 22 12 16 6"></polyline>
+    <polyline points="8 6 2 12 8 18"></polyline>
+  </svg>
+)
+
+export const LineChartIcon = () => (
+  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+    <polyline points="17 6 23 6 23 12"></polyline>
+  </svg>
+)
+
+export const ZapIconAbout = () => (
+  <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+  </svg>
+)
