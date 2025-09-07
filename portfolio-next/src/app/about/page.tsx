@@ -2,7 +2,9 @@
 import { HeroSectionAbout } from "@/components/hero/HeroSectionAbout";
 import { ProfileCard } from "@/components/about/ProfileCard";
 import { motion } from 'framer-motion';
-
+import TechnicalStackSection from "@/components/aboutPage/Test";
+import { ExpertiseSection } from "@/components/aboutPage/Test2";
+import { ReadyToBuildSection } from "@/components/aboutPage/ReadyToBuildSection";
 const titleVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -37,7 +39,10 @@ export default function About() {
             </div>
             <ProfileCard />
           </HeroSectionAbout>
+          <TechnicalStackSection/>
+          <ExpertiseSection/>
         </div>
+        <ReadyToBuildSection/>
       </div>
     </main>
   );
